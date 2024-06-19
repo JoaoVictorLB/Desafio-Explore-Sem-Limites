@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue-primary: 244;
+    --hue-secondary: 320;
+    --hue-third: 283;
+
+    --brand-primary-color: hsl(var(--hue-primary), 38%, 28%);
+    --brand-secondary-color: hsl(var(--hue-secondary), 69%, 42%);
+    --brand-third-color: hsl(var(--hue-third), 47%, 97%);
+
+    --gradient-brand-beginning: rgb(52,49,147);
+    --gradient-brand-ending: rgba(48,44,99,1);
+    --gradient: linear-gradient(90deg, var(--gradient-brand-beginning) 35%, var(--gradient-brand-ending) 100%);
+
+    --full-white: hsl(0, 0%, 100%);
+}
+
+html, 
+input,
+textarea,
+button {
+    font-family: 'Mulish', sans-serif;
+}
+
+body,
+header .container,
+button {
+    background: var(--brand-third-color);
+}
+
+h1,
+h2,
+legend {
+    font-weight: 800;
+    line-height: normal;
+    color: var(--brand-secondary-color);
+}
+
+header {
+    height: 680px;
+    padding-bottom: 9.3rem;
+    
+    text-align: center;
+}
+
+header > img {
+    max-width: 100vw;
+}
+
+h1 {
+    margin-top: 1.7rem;
+}
+
+h1,
+legend {
+    font-size: 3.2rem;
+}
+
+header .container p {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: normal;
+    
+    color: var(--brand-primary-color);
+    
+    margin-top: .5rem;
+}
+
+header .container button {
+    margin-top: 3.5rem;
+    border: none;
+}
+
+.container {
+    max-width: 43rem;
+    margin-inline: auto;
+}
+
+.cards {
+    background: var(--gradient);
+}
+
+section {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5rem;
+
+    padding-block: 5.6rem;
+    padding-inline: 3.9rem;
+}
+
+article {
+    background: var(--full-white);
+    
+    padding: 2.6rem 6rem 2.6rem 2.6rem;
+    border-radius: 2rem;
+}
+
+article h2 {
+    margin-top: 3.3rem;
+
+    font-size: 2.9rem;
+}
+
+article p {
+    margin-top: 2rem;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+}
+
+form {
+    width: 100%;
+
+    margin-top: 7.8rem;
+    padding-inline: 4rem;
+}
+
+form legend {
+    text-align: left;
+}
+
+form > :nth-child(2) {
+    margin-top: 4.3rem;
+}
+
+form .input-wrapper + .input-wrapper,
+form button {
+    margin-top: 2.4rem;
+}
+
+form .input-wrapper label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+form .input-wrapper input,
+form .input-wrapper textarea {
+    border: 2px solid var(--gradient-brand-ending);
+    border-radius: 1.6rem;
+    background: var(--brand-third-color);
+
+    width: 100%;
+}
+
+form .input-wrapper {
+    position: relative;
+}
+
+form .input-wrapper .icon-wrapper img {
+    position: absolute;
+    /* transform: translateY(1.2rem) translateX(1.4rem); */
+    left: 1.4rem;
+    top: 1.2rem;
+}
+
+form .input-wrapper input {
+    padding: 1.4rem 5rem;
+}
+
+form .input-wrapper textarea {
+    padding: 1.2rem 1.4rem;
+
+    min-height: 12.6rem;
+    
+    resize: none;
+}
+
+form button {
+    border: none;
+    border-radius: 1.6rem;
+    padding: 1rem 1.6rem;
+
+    background: var(--gradient);
+    color: var(--full-white);
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+}
+
+footer {
+    width: 100%;
+
+    text-align: center;
+    color: var(--full-white);
+    background: var(--gradient);
+
+    font-size: 1.9rem;
+    font-weight: 400;
+    line-height: normal;
+
+    margin: 6.5rem auto 0;
+    padding-block: 3.2rem 3.2rem;
+}
+
+@media(width > 700px){
+    header {
+        display: grid;
+        grid-template-areas: "container img";
+        grid-template-columns: 1fr 1fr;
+        gap: 2.8rem;
+
+        height: initial;
+
+        padding: 0 3rem 13.6rem 11rem;
+    }
+    
+    header > img {
+        width: 100%;
+        grid-area: img;
+    }
+
+    header .container {
+        grid-area: container;
+        text-align: left;
+
+        width: 100%;
+        padding-top: 28rem;
+    }
+
+    header .container h1 {
+        font-size: 5.8rem;
+    }
+
+    header .container p {
+        font-size: 3.2rem;
+    }
+
+    header .container img {
+        margin-top: 8rem;
+    }
+
+    .container {
+        max-width:100%;
+        margin-inline: initial;
+    }
+
+    section {
+        display: grid;
+        grid-template-rows: initial;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6rem;
+        padding: 6.4rem 11.1rem;
+    }
+
+    article {
+        max-width: 36.6rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas: 
+            "cards cards"
+            "form stars";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    main .cards {
+        grid-area: cards;
+    }
+
+    main form {
+        grid-area: form;
+    }
+
+    main::after{
+        display: flex;
+        grid-area: stars;
+
+        justify-content: end;
+        align-items:flex-end;
+        
+        content: url(./assets/images/stars.png);
+    }
+
+    footer {
+        margin: initial;
+    }
+}
